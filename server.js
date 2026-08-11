@@ -134,7 +134,7 @@ app.get('/dashboard', async (req, res) => {
         </div>
         <div class="level-actions">
           <span class="badge ${badgeClass}">${badgeText}</span>
-          <a href="${href}" target="_blank" class="${btnClass}">Investigar</a>
+         <a href="${href}" class="${btnClass}">Investigar</a>
         </div>
       </div>
     `;
