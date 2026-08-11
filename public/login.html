@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Dossiê Bíblico</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0c0a09;
+      background-image: radial-gradient(ellipse at top, #1c1917 0%, #0c0a09 70%);
+      color: #fef3c7;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      background: rgba(28, 25, 23, 0.95);
+      border: 1px solid #44403c;
+      padding: 48px 40px;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .logo h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #f59e0b;
+      text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+      margin-bottom: 6px;
+    }
+    .logo p {
+      color: #a8a29e;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: #d6d3d1;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      background: #1c1917;
+      border: 1px solid #44403c;
+      border-radius: 8px;
+      color: #fef3c7;
+      font-size: 15px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input:focus {
+      outline: none;
+      border-color: #f59e0b;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+    }
+    input::placeholder {
+      color: #78716c;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(to right, #d97706, #b45309);
+      color: #fffbeb;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 10px;
+      letter-spacing: 0.5px;
+    }
+    button:hover {
+      background: linear-gradient(to right, #f59e0b, #d97706);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px -5px rgba(217, 119, 6, 0.4);
+    }
+    .footer {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 14px;
+      color: #a8a29e;
+    }
+    .footer a {
+      color: #f59e0b;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <h1>DOSSIÊ BÍBLICO</h1>
+      <p>Investigação Ativa</p>
+    </div>
+
+    <form action="/login" method="POST">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="seu@email.com" required>
+      </div>
+      <div class="form-group">
+        <label>Senha</label>
+        <input type="password" name="password" placeholder="••••••••" required>
+      </div>
+      <button type="submit">Entrar na Investigação</button>
+    </form>
+
+    <div class="footer">
+      Não tem conta? <a href="/register">Criar conta</a>
+    </div>
+  </div>
+</body>
+</html>

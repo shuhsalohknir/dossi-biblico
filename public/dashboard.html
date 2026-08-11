@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Investigação Bíblica</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      min-height: 100vh;
+    }
+    header {
+      background: #1e293b;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #334155;
+    }
+    header h1 { font-size: 22px; }
+    header a { color: #94a3b8; text-decoration: none; }
+    header a:hover { color: white; }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .welcome { margin-bottom: 30px; }
+    .welcome h2 { font-size: 28px; margin-bottom: 8px; }
+    .welcome p { color: #94a3b8; }
+    .unlock-box {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 30px;
+    }
+    .unlock-box h3 { margin-bottom: 12px; }
+    .unlock-form {
+      display: flex;
+      gap: 12px;
+    }
+    .unlock-form input {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+    .unlock-form button {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    .unlock-form button:hover { background: #2563eb; }
+    .message {
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .success { background: #166534; color: #bbf7d0; }
+    .error { background: #7f1d1d; color: #fecaca; }
+    .levels { display: grid; gap: 16px; }
+    .level {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .level h3 { font-size: 18px; margin-bottom: 6px; }
+    .level p { color: #94a3b8; font-size: 14px; }
+    .badge {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .liberado { background: #166534; color: #bbf7d0; }
+    .bloqueado { background: #7f1d1d; color: #fecaca; }
+    .btn {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .btn:hover { background: #2563eb; }
+    .btn.disabled {
+      background: #475569;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Investigação Bíblica</h1>
+    <a href="/logout">Sair</a>
+  </header>
+
+  <div class="container">
+    <div class="welcome">
+      <h2>Olá, Aluno</h2>
+      <p>Escolha um nível ou digite o código de liberação.</p>
+    </div>
+
+    <!-- Caixa de código -->
+    <div class="unlock-box">
+      <h3>Liberar próximo nível</h3>
+      <form class="unlock-form" action="/unlock" method="POST">
+        <input type="text" name="codigo" placeholder="Digite o código da prova" required>
+        <button type="submit">Liberar</button>
+      </form>
+      <!-- Mensagens serão mostradas pelo servidor -->
+    </div>
+
+    <div class="levels">
+  <!-- Nível 1 -->
+  <div class="level">
+    <div>
+      <h3>Nível 1 - Introdução</h3>
+      <p>Comece sua jornada bíblica</p>
+    </div>
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <span class="badge liberado">Liberado</span>
+      <a href="https://aresistencia.my.canva.site/c-pia-de-growing-in-faith-and-spiritual-maturity-is-a-journey-that-begins-today" 
+         target="_blank" class="btn">Jogar</a>
+    </div>
+  </div>
+
+  <!-- Nível 2 -->
+  <div class="level">
+    <div>
+      <h3>Nível 2 - A Investigação</h3>
+      <p>Aprofunde-se nas escrituras</p>
+    </div>
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <span class="badge bloqueado">Bloqueado</span>
+      <a href="https://aresistencia.my.canva.site/c-pia-de-growing-in-faith-and-spiritual-maturity-is-a-journey-that-begins-today/page-18" 
+         target="_blank" class="btn disabled">Jogar</a>
+    </div>
+  </div>
+
+  <!-- Nível 3 -->
+  <div class="level">
+    <div>
+      <h3>Nível 3 - Desafio Final</h3>
+      <p>Prove seu conhecimento</p>
+    </div>
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <span class="badge bloqueado">Bloqueado</span>
+      <a href="#" class="btn disabled">Jogar</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
